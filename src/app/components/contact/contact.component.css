@@ -1,0 +1,30 @@
+.contact {
+    padding: 2rem;
+  }
+  
+  .contact h1 {
+    margin-top: 0;
+  }
+  
+  .contact p {
+    margin-bottom: 1rem;
+  }
+  
+  .contact ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .contact a:hover {
+    text-decoration: underline;
+  }
+  

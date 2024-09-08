@@ -1,0 +1,55 @@
+<div class="checkout">
+    <h1>Checkout</h1>
+    <form [formGroup]="checkoutForm" (ngSubmit)="checkout()">
+      <div class="section">
+        <h2>Shipping Address</h2>
+        <div>
+          <label for="name">Name:</label>
+          <input id="name" formControlName="name" type="text" />
+        </div>
+        <div>
+          <label for="address">Address:</label>
+          <input id="address" formControlName="address" type="text" />
+        </div>
+        <div>
+          <label for="city">City:</label>
+          <input id="city" formControlName="city" type="text" />
+        </div>
+        <div>
+          <label for="state">State:</label>
+          <input id="state" formControlName="state" type="text" />
+        </div>
+        <div>
+          <label for="zip">Zip Code:</label>
+          <input id="zip" formControlName="zip" type="text" />
+        </div>
+      </div>
+      <div class="section">
+        <h2>Payment Details</h2>
+        <div>
+          <label for="paymentMethod">Payment Method:</label>
+          <select id="paymentMethod" formControlName="paymentMethod">
+            <option value="" disabled>Select payment method</option>
+            <option value="credit">Credit Card</option>
+            <option value="paypal">PayPal</option>
+          </select>
+        </div>
+        <div *ngIf="checkoutForm.get('paymentMethod')?.value === 'credit'">
+          <div>
+            <label for="cardNumber">Card Number:</label>
+            <input id="cardNumber" formControlName="cardNumber" type="text" />
+          </div>
+          <div>
+            <label for="cardExpiry">Expiry Date:</label>
+            <input id="cardExpiry" formControlName="cardExpiry" type="text" placeholder="MM/YY" />
+          </div>
+          <div>
+            <label for="cardCvc">CVC:</label>
+            <input id="cardCvc" formControlName="cardCvc" type="text" />
+          </div>
+        </div>
+      </div>
+      <button type="submit">Complete Purchase</button>
+    </form>
+  </div>
+  
